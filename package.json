@@ -1,5 +1,5 @@
 {
-  "name": "figma-plugin-react-vite",
+  "name": "template-vite-react-tailwind",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -20,22 +20,30 @@
     "build:plugin": "vite build -c ./vite.config.plugin.ts"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.390.0",
     "monorepo-networker": "^1.5.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.83.0",
+    "@figma/plugin-typings": "^1.96.0",
     "@types/node": "^18.15.11",
-    "@types/postcss-url": "^10.0.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.21",
-    "postcss-url": "^10.1.3",
+    "postcss": "^8.4.38",
     "rimraf": "^5.0.5",
     "sass": "^1.60.0",
+    "tailwindcss": "^3.4.4",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.0",
     "vite": "^5.0.11",
     "vite-plugin-generate-file": "^0.1.1",

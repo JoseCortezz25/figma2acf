@@ -1,11 +1,12 @@
 // https://www.figma.com/plugin-docs/manifest/
 export default {
-  name: "Figma-Plugin-React-Vite",
-  id: "1222852692367737510",
-  api: "1.0.0",
-  main: "plugin.js",
-  ui: "index.html",
+  name: 'Repeat Grid',
+  id: '1407643997043710374',
+  api: '1.0.0',
+  main: 'plugin.js',
+  ui: 'index.html',
   capabilities: [],
   enableProposedApi: false,
-  editorType: ["figma", "figjam"],
+  editorType: [ 'figma' ],
+  relaunchButtons: [{ command: 'edit', name: 'Edit grid' }]
 };
