@@ -33,7 +33,7 @@ npm run dev:ui-only
 
 As with `npm run dev`, running `npm run build` will create a `dist/` folder, which will contain your plugin's `manifest.json` and all the assets necessary to load your plugin in Figma, as well as all of the files necessary to publish your plugin to the Figma Community.
 
-# 📜 License of the Template
+## License
 
 &copy; 2024 Avana Vana
 
