@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { NetworkMessages } from '@/common/network/messages';
-
+import { useState, useEffect } from 'react';
+import { PluginMessageType } from '../lib/types';
 import { Button } from '@/ui/components/ui/button';
 import { Spinner } from '@/ui/components/ui/spinner';
-
 import '@/ui/styles/global.css';
 
 interface SelectionState {
@@ -27,7 +25,6 @@ function App() {
   const [acfResult, setACFResult] = useState<ACFResult | null>(null);
 
   useEffect(() => {
-    // Escuchar mensajes del plugin
     const handleMessage = (event: MessageEvent) => {
       const { type, payload } = event.data.pluginMessage || {};
 
@@ -51,10 +48,9 @@ function App() {
     setIsGenerating(true);
     setACFResult(null);
 
-    // Enviar mensaje al plugin para generar ACF
     parent.postMessage({
       pluginMessage: {
-        type: 'extract-acf',
+        type: PluginMessageType.EXTRACT_TO_ACF,
         payload: {}
       }
     }, '*');

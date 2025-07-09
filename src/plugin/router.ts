@@ -1,18 +1,16 @@
+import { isImageNode } from "@/common/utils";
 import { NodeType } from "..//lib/types";
 
-// Función recursiva para recorrer el árbol de nodos
 const traverseNodes = (node: SceneNode): { texts: SceneNode[], images: SceneNode[] } => {
   const texts: SceneNode[] = [];
   const images: SceneNode[] = [];
 
-  // Verificar el tipo del nodo actual
   if (node.type === "TEXT") {
     texts.push(node);
-  } else if (node.type === "RECTANGLE") {
+  } else if (isImageNode(node) || !('fills' in node)) {
     images.push(node);
   }
 
-  // Recorrer recursivamente los children si existen
   if ("children" in node && node.children) {
     for (const child of node.children) {
       const childResults = traverseNodes(child);

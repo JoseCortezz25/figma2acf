@@ -37,7 +37,7 @@ async function initializePlugin() {
     const { type, payload } = event;
 
     switch (type) {
-      case 'extract-acf':
+      case PluginMessageType.EXTRACT_TO_ACF:
         console.log('Generando ACF JSON...');
         const result = await generateACFJSON();
         if (result) {
@@ -45,6 +45,12 @@ async function initializePlugin() {
         } else {
           figma.notify('❌ Error al generar ACF JSON');
         }
+
+        figma.ui.postMessage({
+          type: PluginMessageType.EXTRACT_TO_ACF,
+          loading: PluginMessageType.LOADED,
+          payload: result
+        });
         break;
     }
   };
