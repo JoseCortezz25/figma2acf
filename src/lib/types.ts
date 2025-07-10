@@ -36,3 +36,11 @@ export enum NodeType {
   VECTOR = "VECTOR",
   WIDGET = "WIDGET"
 }
+
+export interface PluginOptions {
+  text: string;
+};
+
+export interface Payload {
+  text?: string;
+}
